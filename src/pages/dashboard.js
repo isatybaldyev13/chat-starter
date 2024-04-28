@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Box,
   Button,
   CircularProgress,
@@ -69,9 +70,18 @@ const Dashboard = () => {
             padding={1}
           >
             {messages.map((message) => (
-              <Paper sx={{ mb: "0.5rem" }}>
+              <Box
+                display="flex"
+                gap={1}
+                alignItems={"center"}
+                boxShadow={1}
+                padding={1}
+                mb={1}
+                sx={{ backgroundColor: "#fff" }}
+              >
+                <Avatar alt={message?.displayName} src={message?.photoURL} />
                 <Typography>{message.content}</Typography>
-              </Paper>
+              </Box>
             ))}
           </Box>
           <Box display={"flex"}>
